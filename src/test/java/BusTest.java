@@ -7,6 +7,7 @@ public class BusTest {
 
     private Bus bus;
     private Person person;
+    private BusStop busStop;
 
     @Before
     public void before(){
@@ -20,17 +21,17 @@ public class BusTest {
 
     @Test
     public void canAddPassengers(){
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
-        bus.addPassenger(person);
+        bus.pickUp(busStop);
+        bus.pickUp(busStop);
+        bus.pickUp(busStop);
+        bus.pickUp(busStop);
         assertEquals(3, bus.passengerCount());
     }
 
     @Test
     public void canRemovePassengers(){
-        bus.addPassenger(person);
-        bus.addPassenger(person);
+        bus.pickUp(busStop);
+        bus.pickUp(busStop);
         bus.removePassenger(0);
         assertEquals(1, bus.passengerCount());
     }
