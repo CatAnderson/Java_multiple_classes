@@ -12,6 +12,12 @@ public class BusTest {
     @Before
     public void before(){
         bus = new Bus("Edinburgh", 3);
+        person = new Person();
+        busStop = new BusStop("London");
+        busStop.addPerson(person);
+        busStop.addPerson(person);
+        busStop.addPerson(person);
+        busStop.addPerson(person);
     }
 
     @Test
@@ -25,6 +31,7 @@ public class BusTest {
         bus.pickUp(busStop);
         bus.pickUp(busStop);
         bus.pickUp(busStop);
+        assertEquals(1, busStop.queueCount());
         assertEquals(3, bus.passengerCount());
     }
 
