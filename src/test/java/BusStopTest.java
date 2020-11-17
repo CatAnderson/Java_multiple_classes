@@ -27,7 +27,5 @@ public class BusStopTest {
         busStop.addPerson(person);
         busStop.removePerson();
         assertEquals(2, busStop.queueCount());
-        
-
     }
 }
